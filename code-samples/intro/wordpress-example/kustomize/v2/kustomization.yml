@@ -1,5 +1,0 @@
-commonLabels:
-  version: v2
-
-resources:
-- ../base
