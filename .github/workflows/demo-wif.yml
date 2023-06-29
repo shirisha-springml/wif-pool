@@ -34,8 +34,3 @@ jobs:
     - name: List Instances
       run: |-
         gcloud compute instances list --project $PROJECT_ID
-
-    - name: Start specific instance
-        run: |
-          INSTANCE_NAME="instance-1"
-          gcloud compute instances start $INSTANCE_NAME --zone us-central1-c
