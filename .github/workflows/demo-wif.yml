@@ -31,12 +31,12 @@ jobs:
         service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
 
     # List the instances in the project
-    - name: List Instances
+    - name: List Buckets
       run: |-
-        gcloud compute instances list --project $PROJECT_ID
+        gsutil ls
 
-     # Additional gcloud commands
-    - name: Additional Commands
-      run: |-
-        INSTANCE_NAME="instance-1"
-        gcloud compute instances start $INSTANCE_NAME --zone us-central1-c
+    #  # Additional gcloud commands
+    # - name: Additional Commands
+    #   run: |-
+    #     INSTANCE_NAME="instance-1"
+    #     gcloud compute instances start $INSTANCE_NAME --zone us-central1-c
