@@ -34,9 +34,7 @@ jobs:
     - name: List Buckets
       run: |-
         gcloud auth login
-      run: |-
         gcloud auth application-default login
-      run: |-
         gsutil ls
 
     # # Upload a file to a bucket
