@@ -31,9 +31,9 @@ jobs:
         service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
 
     # List the instances in the project
-    - name: List Buckets
+    - name: List Instances
       run: |-
-        gsutil ls
+        gcloud compute instances list --project $PROJECT_ID
 
     #  # Additional gcloud commands
     # - name: Additional Commands
