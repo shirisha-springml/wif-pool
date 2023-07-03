@@ -30,13 +30,13 @@ jobs:
         workload_identity_provider:  ${{ secrets.WORKLOAD_IDENTITY_PROVIDER_ID }}
         service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
 
-    # List the instances in the project
-    - name: List Instances
+    # Display GCP buckets
+    - name: List Buckets
       run: |-
-        gcloud compute instances list --project $PROJECT_ID
+        gsutil ls
 
-    #  # Additional gcloud commands
-    # - name: Additional Commands
+    # # Upload a file to a bucket
+    # - name: Upload File to Bucket
     #   run: |-
-    #     INSTANCE_NAME="instance-1"
-    #     gcloud compute instances start $INSTANCE_NAME --zone us-central1-c
+    #     FILE_PATH="${GITHUB_WORKSPACE}/path/to/file.txt"
+    #     gsutil cp $FILE_PATH gs://your-bucket-name
